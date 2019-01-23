@@ -29,7 +29,7 @@ const ProjectDetails = (props) => {
     } else {
         return (
             <div className="container center">
-                <p>Loading, just a sec...</p>
+                <p>Loading, just a second...</p>
             </div>
         )
     }
@@ -37,6 +37,7 @@ const ProjectDetails = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
+    //console.log(state);
     const id = ownProps.match.params.id;
     const projects = state.firestore.data.projects;
     const project = projects ? projects[id] : null
@@ -50,6 +51,6 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([
-        { collection: 'project' }
+        { collection: 'projects' }
     ])
 )(ProjectDetails)

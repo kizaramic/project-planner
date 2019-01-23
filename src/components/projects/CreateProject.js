@@ -14,9 +14,12 @@ class CreateProject extends Component {
         })
     }
 
+
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.createProject(this.state)
+        //creating a new project with new state : projectName & content
+        this.props.createProject(this.state);
+        //redirecting a user after creating a new project
         this.props.history.push('/');
     }
     render() {

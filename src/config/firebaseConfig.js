@@ -1,18 +1,20 @@
 import firebase from 'firebase/app';
+// importing just firestore & auth
 import 'firebase/firestore'
 import 'firebase/auth'
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyDmNUbCOotqvBDZyb_h_PiFjJc4Z3Cp9yY",
-    authDomain: "project-planner-1111.firebaseapp.com",
-    databaseURL: "https://project-planner-1111.firebaseio.com",
-    projectId: "project-planner-1111",
-    storageBucket: "project-planner-1111.appspot.com",
-    messagingSenderId: "246323590162"
+    apiKey: "AIzaSyCzRp7Z4ADVbXKCotBVvirggMOCi2waQCE",
+    authDomain: "planner-react.firebaseapp.com",
+    databaseURL: "https://planner-react.firebaseio.com",
+    projectId: "planner-react",
+    storageBucket: "planner-react.appspot.com",
+    messagingSenderId: "677887885350"
 };
 
 firebase.initializeApp(config);
-firebase.firestore().settings({ timestampsInSnapshots: true })
 
-export default firebase
+firebase.firestore().settings({ timestampsInSnapshots: true });
+
+export default firebase;

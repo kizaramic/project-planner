@@ -18,8 +18,7 @@ const store = createStore(rootReducer,
     )
 );
 
-// avoiding flicker when loading, while waiting on response 
-
+// avoiding flicker while loading the page, holding the page while waiting on response of firebase.auth 
 store.firebaseAuthIsReady.then(() => {
     ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
     serviceWorker.unregister();

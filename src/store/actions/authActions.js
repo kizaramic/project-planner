@@ -1,6 +1,6 @@
 import { getFirestore } from "redux-firestore";
 
-// authentication of user with email and password as credentials
+// authentication of user with email and password as credentials with getFirebase
 
 export const signIn = (credentials) => {
     return (dispatch, getState, { getFirebase }) => {
@@ -29,7 +29,7 @@ export const signOut = () => {
     }
 }
 
-// creating a new user in firestore collection
+// creating a new user in firestore collection, getFirebase for authentication
 
 export const register = (newUser) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
@@ -40,6 +40,7 @@ export const register = (newUser) => {
             newUser.email,
             newUser.password
         ).then((resp) => {
+            // making a user document in firestore with autogenereted uid from resp and setting some properties in that doc 
             return firestore.collection('users').doc(resp.user.uid).set({
                 firstName: newUser.firstName,
                 lastName: newUser.lastName,

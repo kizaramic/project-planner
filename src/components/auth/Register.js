@@ -17,6 +17,7 @@ class Register extends Component {
         })
     }
 
+    // this.state represents a newUser
     handleSubmit = (e) => {
         e.preventDefault()
         //console.log(this.state)
@@ -70,4 +71,4 @@ const mapDispatchToProps = (dispatch) => {
         register: (newUser) => dispatch(register(newUser))
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Register)
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
