@@ -1,4 +1,4 @@
-import { getFirestore } from "redux-firestore";
+
 
 // authentication of user with email and password as credentials with getFirebase
 

@@ -3,20 +3,20 @@ import { connect } from 'react-redux';
 import { createProject } from '../../store/actions/projectActions';
 import { Redirect } from 'react-router-dom';
 
+
 class CreateProject extends Component {
     state = {
-        projectName: "",
-        content: ""
+        projectName: '',
+        content: ''
     }
     handleChange = (e) => {
-        this.setState({
-            [e.target.id]: e.target.value
-        })
+        this.setState({ [e.target.id]: e.target.value })
     }
 
 
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log(this.state)
         //creating a new project with new state : projectName & content
         this.props.createProject(this.state);
         //redirecting a user after creating a new project
@@ -26,7 +26,7 @@ class CreateProject extends Component {
         const { auth } = this.props;
         if (!auth.uid) return <Redirect to='/signin' />
         return (
-            <div className="container">
+            <div className="container" style={{ width: 800 }}>
                 <form onSubmit={this.handleSubmit} className="white">
                     <h5 className="grey-text text-darken-3">Create New Project</h5>
                     <div className="input-field">
@@ -38,8 +38,8 @@ class CreateProject extends Component {
                         <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
                     </div>
 
-                    <div className="input-field">
-                        <button className="btn pink lighten-1">Create</button>
+                    <div>
+                        <button className="btn pink lighten-1" type="submit">Create</button>
                     </div>
                 </form>
             </div>
@@ -56,7 +56,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createProject: project => dispatch(createProject(dispatch))
+        createProject: project => dispatch(createProject(project))
     }
 }
 

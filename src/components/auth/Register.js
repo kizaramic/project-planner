@@ -28,9 +28,10 @@ class Register extends Component {
         if (auth.uid) return <Redirect to='/' />
 
         return (
-            <div className="container">
+            <div className="container" style={{ width: 600 }}>
                 <form onSubmit={this.handleSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">Register (don't worry, no need for email confirmation) :)</h5>
+                    <h5 className="grey-text text-darken-3">Register</h5>
+                    <h6>(no need for email confirmation, this is for demo purpose only)</h6>
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" onChange={this.handleChange} />
@@ -55,11 +56,9 @@ class Register extends Component {
                     </div>
                 </form>
             </div>
-
         )
     }
 }
-
 const mapStateToProps = (state) => {
     return {
         auth: state.firebase.auth,

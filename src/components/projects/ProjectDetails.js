@@ -5,6 +5,7 @@ import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 
 
+
 const ProjectDetails = (props) => {
     const { project, auth } = props;
     if (!auth.uid) return <Redirect to='/signin' />
@@ -12,7 +13,7 @@ const ProjectDetails = (props) => {
     if (project) {
         return (
             <div>
-                <div className="container section project-details">
+                <div className="container section project-details" style={{ width: 800 }}>
                     <div className="card">
                         <div className="card-content">
                             <span className="card-title">{project.projectName} </span>
@@ -38,6 +39,7 @@ const ProjectDetails = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
     //console.log(state);
+
     const id = ownProps.match.params.id;
     const projects = state.firestore.data.projects;
     const project = projects ? projects[id] : null
