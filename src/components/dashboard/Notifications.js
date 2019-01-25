@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 
 
@@ -16,7 +17,7 @@ const Notifications = (props) => {
                                     <span className="red-text">{notification.user}</span>
                                     <span> {notification.content}</span>
                                     <div className="grey-text note-date">
-                                        {Date.now()}
+                                        {moment(notification.time.toDate()).fromNow()}
                                     </div>
                                 </li>
                             )

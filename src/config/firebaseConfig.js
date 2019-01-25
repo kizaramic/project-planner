@@ -5,16 +5,16 @@ import 'firebase/auth'
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyCzRp7Z4ADVbXKCotBVvirggMOCi2waQCE",
-    authDomain: "planner-react.firebaseapp.com",
-    databaseURL: "https://planner-react.firebaseio.com",
-    projectId: "planner-react",
-    storageBucket: "planner-react.appspot.com",
-    messagingSenderId: "677887885350"
+    apiKey: "AIzaSyCpiN_bVsraJvkjPh2-tzTBKb_Ut1vaOQ4",
+    authDomain: "project-planner-react.firebaseapp.com",
+    databaseURL: "https://project-planner-react.firebaseio.com",
+    projectId: "project-planner-react",
+    storageBucket: "project-planner-react.appspot.com",
+    messagingSenderId: "229870695889"
 };
 
 firebase.initializeApp(config);
 
-//firebase.firestore().settings({ timestampsInSnapshots: true });
+firebase.firestore().settings({ timestampsInSnapshots: true });
 
 export default firebase;
