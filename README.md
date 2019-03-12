@@ -1,3 +1,4 @@
-This project was made with React, Redux, Firestore, Firebase and Material-ui.
-It has overoll good architectural design for scaling towards bigger applications. 
+Project was made with React, Redux, Firestore and Firebase.
+Original use case was ment for taking notes and planning. 
+
 
